@@ -1,0 +1,19 @@
+1. Creating a Database -> CREATE DATABASE startersql;
+
+2. run all new Queries in startersql --> USE startersql;
+
+3. create a table user with id as primarykey with autoincrement, name which cannot be null , email which is unique, date of birth, and created at columns --> 
+CREATE TABLE users (
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100) NOT NULL,
+email VARCHAR(100) UNIQUE NOT NULL,
+gender ENUM('Male', 'Female', 'other'),
+date_of_birth DATE,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+4. view the table users --> SELECT * FROM users;
+
+5. Delete the database --> DROP DATABASE startersql;
+
+

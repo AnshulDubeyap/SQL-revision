@@ -1,0 +1,16 @@
+// JOIN in SQL
+
+** INNER JOIN --> combine both tables and show what data is common and available in both
+
+1. Join the users and address tables using Inner join showing the city from address and name from users -->
+SELECT users.name, address.city FROM users INNER JOIN address ON users.id = address.user_id;
+
+** LEFT JOIN --> all the data of users, if address does not have data it will be null
+
+1. Join the users and address tables using LEFT join showing the city from address and name from users -->
+SELECT users.name, address.city FROM users LEFT JOIN address ON users.id = address.user_id;
+
+** RIGHT JOIN --> now the all records of address will be their 
+
+1. Join the users and address tables using RIGHT  join showing the city from address and name from users -->
+SELECT users.name, address.city FROM users RIGHT JOIN address ON users.id = address.user_id;

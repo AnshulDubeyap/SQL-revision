@@ -1,0 +1,16 @@
+6. Rename the table users --> RENAME TABLE users to programmers;
+
+7. Comments in SQL --> press ctrl + / in the beginning of the Query
+
+8. Altering / updating the table with a new column is_active which is Boolean with default value as true --> 
+ALTER TABLE users ADD column is_active BOOLEAN DEFAULT true;
+
+9. Delete / Drop the is_active column --> ALTER TABLE users DROP COLUMN is_active;
+
+10. update the column name from varchar 100 to varchar 150 --> ALTER TABLE users MODIFY COLUMN name VARCHAR(150);
+
+11. update that table the way that email column appears after id --> 
+ALTER TABLE users MODIFY COLUMN email VARCHAR(100) AFTER id;
+
+12. update the table the way date_of_birth column appear first --> 
+ALTER TABLE users MODIFY COLUMN date_of_birth DATE FIRST;

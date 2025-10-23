@@ -1,0 +1,31 @@
+// Transaction and auto commit 
+
+** in auto commit mode the query will not be performed until we type COMMIT at the end, if we want to go back (undo) the query
+we will type ROLLBACK,
+
+** in MySQL by default auto commit is on, to make it off type SET autocommit = 0;
+** and to make it on again type SET autocommit = 1;
+
+// Primary Key
+
+** Difference between Primary Key and Unique --> primary key does not allow null values, while unique allows null values
+one table can only have one primary key , a table can have multiple unique
+primary key cannot be easily dropped, while unique column can be dropped easily
+
+// Foreign Key
+
+** If we add multiple columns as our data increases the table might become very lag and big, thus we break the table in multiple pieces
+
+1. create a table to store the address of the users and take id as foreign key --> 
+CREATE TABLE address (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	user_id INT,
+	street VARCHAR(225),
+	city VARCHAR(100),
+	state VARCHAR(100),
+	pincode VARCHAR(10),
+	CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+** (ON DELETE CASCADE) if parent row is deleted it automatically deletes the row in child table as well
+** in place of ON DELETE CASCADE we can also use SET NULL or RESTRICT also

@@ -1,0 +1,32 @@
+// Functions in SQL
+
+# COUNT() --> gives us the count
+ 
+1. count the female in users --> SELECT COUNT(*) FROM users WHERE gender = 'Female';
+
+2. count the male whose salary is greater than 20000 --> 
+SELECT COUNT(*) FROM users WHERE gender = 'Male' AND salary > 20000;
+
+# MIN(), MAX(), SUM(), AVERAGE()
+
+1. what is the max salary and min salary --> SELECT MIN(salary) AS min_salary, MAX(salary) AS max_salary FROM users;
+
+2. what is the sum of all salaries --> SELECT SUM(salary) AS salary_sum FROM users;
+
+3. what is the average of salaries of users --> SELECT AVG(salary) AS avg_salary FROM users;
+
+4. group the previous query with gender --> SELECT gender, AVG(salary) AS avg_salary FROM users GROUP BY gender;
+
+# LENGTH(), LOWER(), CONCAT()
+
+1. find the length of each name in users with id and gender --> SELECT id, gender, LENGTH(name) AS name_users FROM users;
+
+2. in the previous lower_case the name --> SELECT LOWER(name) AS lower FROM users;
+
+3. in the previous add 667 in the last of each name --> SELECT CONCAT(LOWER(name), '667') FROM users;
+
+# NOW(), YEAR(), DAY(), MONTH(), DATEDIFF()
+
+1. conver the date_of_birth to just YEAR --> SELECT YEAR(date_of_birth) AS year FROM users;
+
+2. find how many days each users has lived --> SELECT name, DATEDIFF(CURRENT(), date_of_birth) AS days_lived FROM users;

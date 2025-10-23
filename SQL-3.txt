@@ -1,0 +1,43 @@
+13. insert into users table --> 
+INSERT INTO users VALUES
+('22-04-2002', 1, 'dubeyanshul2204@gmail.com', 'Anshul', 'Male', DEFAULT);
+
+14. insert into users but only name email gender and date of birth column and multiple values --> 
+INSERT INTO users (name, email, gender, date_of_birth) VALUES
+('Jimmy', 'jimmy343@gmail.com', 'Male', '2002-05-15'),
+('Joel', 'joel667@gmail.com', 'Male', '1999-11-05'),
+('Kirsta', 'krista212@gmail.com', 'Female', '2003-06-12');
+
+// Querying data (WHERE clause)
+
+1. select data from users where gender = female --> SELECT * FROM users WHERE gender = 'female';
+
+2. select data from users where gender is not equals male --> SELECT * FROM users WHERE gender <> 'Male'; || SELECT * FROM users WHERE gender != 'Male';  
+
+3. select data from users where date of birth is less than 1995-09-09 --> 
+SELECT * FROM users WHERE date_of_birth > '1995-09-09';
+
+4. select data from users where id is greater than 10 --> SELECT * FROM users WHERE id > 10;
+
+5. select data from users where date of birth is null --> SELECT * FROM users WHERE date_of_birth IS NULL;
+
+6. select data from users where date of birth is not null --> SELECT * FROM users WHERE date_of_birth IS NOT NULL;
+
+7. select users wholes date of birth lies between 1990-09-09 and 1999-09-09 -->
+SELECT * FROM users WHERE date_of_birth BETWEEN '1990-09-09' AND '1999-09-09';
+
+8. select users where gender is Male and Female --> SELECT * FROM users WHERE gender IN ('Male', 'Female');
+
+9. select users where gender is female and salary is greater than 70,000 -->
+SELECT * FROM users WHERE gender = 'Female' AND salary > 70000;
+
+10. select users where gender is male or salary is greater than 65,000 -->
+SELECT * FROM users WHERE gender = 'Male' OR salary > 65000;
+
+11. arrange the previous query in acending order in date of birth -->
+SELECT * FROM users WHERE gender = 'Male' OR salary > 65000 ORDER BY date_of_birth ASC;
+SELECT * FROM users WHERE gender = 'Male' OR salary > 65000 ORDER BY date_of_birth DESC;
+
+12. in the previous query i need top 5 rows -->
+SELECT * FROM users WHERE gender = 'Male' OR salary > 65000 ORDER BY date_of_birth ASC LIMIT 5;
+

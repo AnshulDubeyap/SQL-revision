@@ -1,0 +1,35 @@
+// Union in Union All
+
+1. create table admin_users --> 
+CREATE TABLE admin_users (
+id INT  PRIMARY KEY,
+name VARCHAR(100),
+email VARCHAR(100),
+gender ENUM('Male', 'Female', 'Others'),
+date_of_birth DATE,
+salary INT
+);
+
+2. create a view where we can consolidated name column data of users and admin_users --> 
+** returns single list of unique name from both tables removes duplicate
+SELECT name FROM users 
+UNION 
+SELECT name FROM admin_users;
+
+3. create a view where we can consolidated name column data of users and admin_users --> 
+** doesnot remove duplicate
+SELECT name FROM users 
+UNION ALL
+SELECT name FROM admin_users;
+
+4. in the previous add a role column with 'User' from user and 'Admin' from admin_users -->
+SELECT name, 'User' AS role FROM users
+UNION 
+SELECT name, 'Admin' AS role FROM admin_users;
+
+5. use ORDER BY in the previous query -->
+SELECT name FROM users S
+UNION 
+SELECT name FROM admin_users
+ORDER BY name;
+

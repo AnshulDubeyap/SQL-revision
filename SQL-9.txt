@@ -1,0 +1,16 @@
+// SELF JOIN in SQL
+
+1. update table users to add a column --> ALTER TABLE users ADD COLUMN referred_by_id INT;
+
+2. insert some data in new column -->
+** populate the new column
+UPDATE users SET referred_by_id  = 1 WHERE id IN (1, 3, 13, 15, 16, 5, 18);
+UPDATE users SET referred_by_id = 2 WHERE id = 4;
+
+3. do self join --> 
+** self join helps us in understanding which is referred by which, so instead of id with self join i can have the name to read the table easily
+SELECT a.id, a.name AS user_name, b.name AS referred_name FROM users a INNER JOIN users b ON a.referred_by_id = b.id;
+
+// Views in SQL
+
+1. create a view that lists all users earning more than ₹70,000 --> 

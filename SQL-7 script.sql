@@ -1,9 +1,13 @@
-SELECT * FROM users;
+USE startersql;
 
-SELECT * FROM address;
+-- SELECT name FROM users
+-- UNION
+-- SELECT name FROM admin_users;
 
-SELECT users.name, address.city, address.state FROM users INNER JOIN address ON users.id = address.user_id;
+-- SELECT name FROM users
+-- UNION ALL
+-- SELECT name FROM admin_users;
 
-SELECT users.name, address.city FROM users LEFT JOIN address ON users.id = address.user_id
-
-SELECT users.name, address.city FROM users RIGHT JOIN address ON users.id = address.user_id;
+-- SELECT name, 'User' AS role FROM users
+-- UNION 
+-- SELECT name, 'Admin' AS role FROM admin_users;
